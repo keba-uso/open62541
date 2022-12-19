@@ -62,6 +62,9 @@ _UA_BEGIN_DECLS
                                         "</xs:complexType>"
 #define XML_ENCODE_GUID_TYPE_DEFINITION_LEN 131
 
+#define XML_ENCODE_BYTESTRING_TYPE_DEFINITION "<xs:element name=\"ByteString\" nillable=\"true\" type=\"xs:base64Binary\"/>"
+#define XML_ENCODE_BYTESTRING_TYPE_DEFINITION_LEN 70
+
 #define XML_ENCODE_NODEID_TYPE_DEFINITION "<xs:complexType name=\"NodeId\">" \
                                             "<xs:sequence>" \
                                               "<xs:element name=\"Identifier\" type=\"xs:string\" minOccurs=\"0\" />" \
@@ -75,6 +78,30 @@ _UA_BEGIN_DECLS
                                                     "</xs:sequence>" \
                                                   "</xs:complexType>"
 #define XML_ENCODE_EXPANDEDNODEID_TYPE_DEFINITION_LEN 145
+
+#define XML_ENCODE_STATUSCODE_TYPE_DEFINITION "<xs:complexType name=\"StatusCode\">" \
+                                                    "<xs:sequence>" \
+                                                      "<xs:element name=\"Code\" type=\"xs:unsignedInt\" minOccurs=\"0\" />" \
+                                                    "</xs:sequence>" \
+                                                  "</xs:complexType>"
+#define XML_ENCODE_STATUSCODE_TYPE_DEFINITION_LEN 140
+
+#define XML_ENCODE_QUALIFIEDNAME_TYPE_DEFINITION "<xs:complexType name=\"QualifiedName\">" \
+                                                   "<xs:sequence>" \
+                                                     "<xs:element name=\"NamespaceIndex\" type=\"xs:int\" minOccurs=\"0\" />" \
+                                                     "<xs:element name=\"Name\" type=\"xs:string\" minOccurs=\"0\" />" \
+                                                   "</xs:sequence>" \
+                                                 "</xs:complexType>"
+#define XML_ENCODE_QUALIFIEDNAME_TYPE_DEFINITION_LEN 202
+
+
+#define XML_ENCODE_LOCALIZEDTEXT_TYPE_DEFINITION "<xs:complexType name=\"LocalizedText\">" \
+                                                   "<xs:sequence>" \
+                                                     "<xs:element name=\"Locale\" type=\"xs:string\" minOccurs=\"0\" />" \
+                                                     "<xs:element name=\"Text\" type=\"xs:string\" minOccurs=\"0\" />" \
+                                                   "</xs:sequence>" \
+                                                 "</xs:complexType>"
+#define XML_ENCODE_LOCALIZEDTEXT_TYPE_DEFINITION_LEN 197
 
 typedef struct {
     uint8_t *pos;
